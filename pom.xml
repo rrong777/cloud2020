@@ -8,10 +8,14 @@
   <groupId>org.example</groupId>
   <artifactId>cloud2020</artifactId>
   <version>1.0-SNAPSHOT</version>
-
-<!--  表示当前项目是一个pom父工程-->
+  <!--  表示当前项目是一个pom父工程-->
   <packaging>pom</packaging>
 <!--  父工程通过总的pom文件，通过dependency manager标签，这样一个总结标签，来进行子模块集成这个pom，让我们的 子模块拥有统一的版本号。删除掉新建项目的文件夹，只留下一个pom-->
+
+  <modules>
+    <module>cloud-provider-payment8001</module>
+  </modules>
+
 
 <!--  统一管理jar包版本-->
   <properties>
