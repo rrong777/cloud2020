@@ -1,0 +1,25 @@
+# 建议凡是微服务子模块都要有port和名称
+# 服务端口号
+server:
+  port: 8001
+
+# 服务名称
+# mysql5.7以后进行了一个安全架构的加强，如果不加useSSL=false可能会抛一个安全相关的异常
+spring:
+  application:
+    name: cloud-payment-service
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: org.gjt.mm.mysql.Driver
+    url: jdbc:mysql://47.97.213.177:3306/db2019?useUnicode=true&characterEncoding=utf-8&useSSL=false
+    username: root
+    password: '!Dongxue202006'
+
+
+# 和mybatis整合，后续mybatis要写一些xxxMapper.xml，这个表示在resources子文件夹下面会建一个mapper文件夹，专门放置各种mapper.xml
+mybatis:
+  mapperLocations: classpath:mapper/*.xml
+  # 下面这个就是实体类的包名
+  type-aliases-package: com.atguigu.springcloud.entities
+
+
