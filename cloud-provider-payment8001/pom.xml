@@ -19,7 +19,8 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
-
+<!--        子模块pom依赖如果写了版本号就用子类的 。没写就用父类的。父模块dependencyManager元素只是锁定版本号，确定子模块的 版本号，子module
+            的pom中依赖的jar包不用写version，父模块中parent元素生命groupId和version，子模块只写一个artifactId即可-->
         <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-web -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
