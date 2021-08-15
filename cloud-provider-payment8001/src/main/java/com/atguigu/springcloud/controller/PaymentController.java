@@ -17,8 +17,8 @@ public class PaymentController {
     // 前后端分离了，传给前端的只能是个CommonResult。这个 也是约定规范之一，传给他不涉及具体的业务
     @PostMapping("/create")
     // post请求是可以用形参入仓直接去接收url中的参数的，get请求也可以，但是如果是在请求body中的参数要映射到形参入参，需要加@RequestBody
-//    public CommonResult create(@RequestBody Payment payment){
-    public CommonResult create(Payment payment){
+//    public CommonResult create(Payment payment){
+    public CommonResult create(@RequestBody Payment payment){
         int result = paymentService.create(payment);
         log.info("*******插入结果：" + result);
         if(result  > 0) {

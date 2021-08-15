@@ -1,3 +1,9 @@
-/cloud-provider-payment8001/target/
+
 .idea
 cloud-provider-payment8001/cloud-provider-payment8001.iml
+cloud-api-commons/cloud-api-commons.iml
+cloud-consumer-order80/cloud-consumer-order80.iml
+cloud-consumer-order80/target
+cloud-provider-payment8001/target
+cloud-api-commons/target
+
