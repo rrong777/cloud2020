@@ -1,0 +1,39 @@
+# 建议凡是微服务子模块都要有port和名称
+# 服务端口号
+server:
+  port: 8002
+
+# 服务名称
+# mysql5.7以后进行了一个安全架构的加强，如果不加useSSL=false可能会抛一个安全相关的异常
+spring:
+  application:
+    name: cloud-payment-service # 微服务中这个非常重要，一般你命名好了不要轻易改动，你使用eureka注册中心，在上面注册肯定要使用自己的名称。你要告诉服务注册中心你的id
+
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: org.gjt.mm.mysql.Driver
+    url: jdbc:mysql://47.97.213.177:3306/db2019?useUnicode=true&characterEncoding=utf-8&useSSL=false
+    username: root
+    password: '!Dongxue202006'
+
+# eureka 客户端配置
+eureka:
+  client:
+    # 是否将服务注册进eureka 这个是客户端，是微服务提供者，一定要注册进eureka
+    register-with-eureka: true
+    fetchRegistry: true
+    # 你要在 哪个eureka注册
+    service-url:
+#      defaultZone: http://localhost:7001/eureka #单机版，只需要在 一个地方注册即可 。集群版需要在注册中心 集群注册
+      defaultZone: http://eureka7001.com:7001/eureka,http://eureka7002.com:7002/eureka  #集群版
+
+# 和mybatis整合，后续mybatis要写一些xxxMapper.xml，这个表示在resources子文件夹下面会建一个mapper文件夹，专门放置各种mapper.xml
+mybatis:
+  mapperLocations: classpath:mapper/*.xml
+  # 下面这个就是实体类的包名
+  type-aliases-package: com.atguigu.springcloud.entities
+#  配置日志输出
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+
