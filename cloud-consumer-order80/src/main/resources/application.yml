@@ -7,7 +7,7 @@ spring:
 
 eureka:
   client:
-    # 这个是入驻的开关，不想入驻就改为false
+    # 这个是入驻eureka注册中心的开关，不想入驻就改为false
     register-with-eureka: true
     fetchRegistry: true
     service-url:
