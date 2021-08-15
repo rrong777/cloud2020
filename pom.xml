@@ -5,7 +5,9 @@
   <modelVersion>4.0.0</modelVersion>
 
 <!--  maven坐标-->
-  <groupId>org.example</groupId>
+<!--  新建maven工程默认的groupId是org.example这个记得修改
+      子module里面依赖的父module的groupId也要修改-->
+  <groupId>com.atguigu.springcloud</groupId>
   <artifactId>cloud2020</artifactId>
   <version>1.0-SNAPSHOT</version>
   <!--  表示当前项目是一个pom父工程-->
@@ -16,6 +18,7 @@
     <module>cloud-provider-payment8001</module>
       <module>cloud-consumer-order80</module>
       <module>cloud-api-commons</module>
+    <module>cloud-eureka-server7001</module>
   </modules>
 
 

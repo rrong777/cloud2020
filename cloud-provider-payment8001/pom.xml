@@ -4,16 +4,24 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
         <artifactId>cloud2020</artifactId>
-        <groupId>org.example</groupId>
+        <groupId>com.atguigu.springcloud</groupId>
         <version>1.0-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>cloud-provider-payment8001</artifactId>
 
-<!--    spring-boot-starter-web 和 spring-boot-starter-actuator 这两个模块几乎永远绑定在一块儿
-        actuator 图形化显示和坐标监控，图形处理化-->
+
     <dependencies>
+<!--        引入公共模块 -->
+        <dependency>
+            <groupId>com.atguigu.springcloud</groupId>
+            <artifactId>cloud-api-commons</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
+        <!--    spring-boot-starter-web 和 spring-boot-starter-actuator 这两个模块几乎永远绑定在一块儿
+                actuator 图形化显示和坐标监控，图形处理化-->
         <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-web -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -87,7 +95,7 @@
 <!--    springboot的maven依赖-->
     <build>
 <!--        finalName 可添加可不添加，这个是你工程的名字-->
-        <finalName>cloud2020</finalName>
+        <finalName>cloud-provider-payment8001</finalName>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
