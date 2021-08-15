@@ -1,0 +1,12 @@
+server:
+  port: 8004
+
+spring:
+  application:
+    name: cloud-provider-payment
+  cloud:
+    zookeeper:
+      # zk客户端默认端口是2181 还会占用8080 好像是zk服务端占用 8080 可以修改
+      connect-string: 192.168.43.94:2181
+
+
