@@ -19,7 +19,10 @@ import javax.annotation.Resource;
 @RequestMapping("/consumer")
 // 模拟浏览器往后台下订单 发起一个rest请求
 public class OrderController {
-    public static final String PAYMENT_URL = "http://localhost:8001";
+//    单机环境下 这样写没问题，但是现在请求的是集群服务
+//    public static final String PAYMENT_URL = "http://localhost:8001";
+    // ip:port使用服务名代替
+    public static final String PAYMENT_URL = "http://CLOUD-PAYMENT-SERVICE";
     @Resource
     private RestTemplate restTemplate;
 
