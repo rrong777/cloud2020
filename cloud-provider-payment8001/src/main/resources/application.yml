@@ -18,6 +18,9 @@ spring:
 
 # eureka 客户端配置
 eureka:
+  instance:
+    instance-id: payment8001
+    prefer-ip-address: true
   client:
     # 是否将服务注册进eureka 这个是客户端，是微服务提供者，一定要注册进eureka
     register-with-eureka: true
