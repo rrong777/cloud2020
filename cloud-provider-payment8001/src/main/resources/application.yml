@@ -21,6 +21,9 @@ eureka:
   instance:
     instance-id: payment8001
     prefer-ip-address: true
+    # 把时间间隔调小，最大两秒没有发送心跳就判定你过期，搭配自我保护机制，服务关闭两秒马上从eureka注册中心 清楚当前服务的 数据
+#    lease-renewal-interval-in-seconds: 1
+#    lease-expiration-duration-in-seconds: 2
   client:
     # 是否将服务注册进eureka 这个是客户端，是微服务提供者，一定要注册进eureka
     register-with-eureka: true
