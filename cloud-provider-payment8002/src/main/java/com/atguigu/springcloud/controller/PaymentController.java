@@ -29,6 +29,10 @@ public class PaymentController {
             return new CommonResult(444, "插入数据库失败", null);
         }
     }
+    @GetMapping(value = "/payment/lb")
+    public String getPaymentLB(){
+        return "8002";
+    }
 
     @GetMapping("/get/{id}")
     public CommonResult<Payment> getPaymentById(@PathVariable("id") Long id){
