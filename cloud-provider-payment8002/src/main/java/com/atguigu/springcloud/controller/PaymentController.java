@@ -39,7 +39,9 @@ public class PaymentController {
         Payment payment = paymentService.getPaymentById(id);
         log.info("*******查询结果：" + payment);
         if(payment  != null) {
-            return new CommonResult(200, "查询成功", payment + "serverPost:" + serverPost);
+            // 这里返回值变成 'Payment(id=31, serial=尚硅谷001)serverPost:8002' String feign调用无法映射成CommonResult<Payment> 主要是Payment无法映射成对象
+//            return new CommonResult(200, "查询成功", payment + "serverPost:" + serverPost);
+            return new CommonResult(200, "查询成功，serverPost" + serverPost, payment);
         } else {
             return new CommonResult(444, "没有id为：" + id + "的对应记录", null);
         }

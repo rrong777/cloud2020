@@ -27,6 +27,7 @@ public class MyLB implements LoadBalancer {
             // 当前是第几次通过ribbon负载均衡发起的请求
             current = this.atomicInteger.get();
             // 下一次是第几次通过ribbon负载均衡发起的请求
+            // 自旋锁保证多线程下 的一致性
             next = current >= 2147483647 ? 0 : current + 1; // 2147483647 Integer.MAX_VALUE Integer的最大取值
             // 上面只是从主物理内存中 取出atomicInteger的值，下面是比较当前
         } while (!this.atomicInteger.compareAndSet(current, next));
