@@ -93,5 +93,17 @@ public class PaymentController {
         return discoveryClient;
     }
 
-
+    /**
+     * 测试Feign超时调用 模拟业务中的长流程调用
+     * @return
+     */
+    @GetMapping("/feign/timeout")
+    public String paymentFeignTimeout() {
+        try {
+            TimeUnit.SECONDS.sleep(3);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        return serverPost;
+    }
 }
