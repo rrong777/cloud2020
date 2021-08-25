@@ -25,6 +25,9 @@ public class PaymentController {
         log.info("*******result:"+result);
         return result;
     }
+    // 请求这个接口 一定超时，前端返回
+    // 线程池：HystrixTimer-1 paymentInfo_TimeOutHandler,id： 31 /(ㄒoㄒ)/~~
+    // HystrixTimer 并且现在换了一个线程池，不是用tomcat的，这是一个单独的线程池做处理，起到一定隔离效果
     @GetMapping("/payment/hystrix/timeout/{id}")
     public String paymentInfo_TimeOut(@PathVariable("id") Integer id){
         String result = paymentService.paymentInfo_TimeOut(id);
