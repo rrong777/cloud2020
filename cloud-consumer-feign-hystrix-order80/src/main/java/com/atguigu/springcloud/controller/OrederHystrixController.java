@@ -45,7 +45,7 @@ public class OrederHystrixController {
 
 
     //全局统一的 兜底方法
-    public String paymentGlobalFallbackMethod(){
+    public String paymentGlobalFallbackMethod(){// 请记住 全局统一的兜底方法必须是无参的
         return "全局统一fallback(┬＿┬)";
     }
 
