@@ -1,0 +1,16 @@
+server:
+  port: 9527
+spring:
+  application:
+    name: cloud-gateway
+    # 网关也要 作为一个微服务注册到注册中心  自己也是一个微服务
+eureka:
+  instance:
+    hostname: cloud-gateway-service
+  client:
+    service-url:
+      register-with-eureka: true
+      fetch-registry: true
+      defaultZone: http://eureka7001.com:7001/eureka
+
+
