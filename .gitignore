@@ -18,3 +18,4 @@ cloud-api-commons/target
 /cloud-consumer-feign-hystrix-order80/target
 /cloud-consumer-hystrix-dashboard9001/target/
 /cloud-gateway-gateway9527/target/classes/com/atguigu/springcloud/GateWayMain9527.class
+/cloud-gateway-gateway9527/target/classes/com/atguigu/springcloud/config/GatewayConfig.class

@@ -71,6 +71,7 @@ public class PaymentController {
             return new CommonResult(444, "没有id为：" + id + "的对应记录", null);
         }
     }
+
     @GetMapping(value = "/lb")
     public String getPaymentLB(){
         return "8001";
