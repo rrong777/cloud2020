@@ -29,7 +29,7 @@ eureka:
     # 你要在 哪个eureka注册
     service-url:
 #      defaultZone: http://localhost:7001/eureka #单机版，只需要在 一个地方注册即可 。集群版需要在注册中心 集群注册
-      defaultZone: http://eureka7001.com:7001/eureka,http://eureka7002.com:7002/eureka  #集群版
+      defaultZone: http://eureka7001.com:7001/eureka #,http://eureka7002.com:7002/eureka  #集群版
 
 # 和mybatis整合，后续mybatis要写一些xxxMapper.xml，这个表示在resources子文件夹下面会建一个mapper文件夹，专门放置各种mapper.xml
 mybatis:
