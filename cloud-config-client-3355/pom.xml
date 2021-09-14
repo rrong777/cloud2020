@@ -30,7 +30,9 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
-
+<!--        配置中心客户端服务 实现动态刷新需要引入如下依赖，图形化监控依赖 除了网关服务不加，其他的服务都得加，要有
+            以下插件，自己发生变化之后，能够被别人监控到，当然你也要监控别人发生到变化也需要这个依赖 需要上面的web依赖
+            和下面的actuator依赖-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-actuator</artifactId>
