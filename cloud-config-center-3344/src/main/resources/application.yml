@@ -1,0 +1,25 @@
+server:
+  port: 3344
+spring:
+  application:
+    name: cloud-config-center #注册进Eureka服务器的微服务名
+  cloud:
+    config:
+      server:
+        git:
+#          外面无法连接到GitHub，后续自己 看脑图
+#          uri:  git@github.com:rrong777/springcloud-config.git #GitHub.上面的git仓库名字,去这个地址，搜索下面的目录
+          uri:  https://github.com/rrong777/springcloud-config.git # ssh调用会抛出异常 reject HostKey: github.com
+          ####搜索目录
+          search-paths:
+            - springcloud-config
+          force-pull: true # 如果不加 仓库的 配置文件修改的时候会出异常 ：Could not fetch remote for master remote
+        default-label: main # GitHub官方宣布从2020年10月1日起，将用“main”取代“master”作为默认分支名
+      # 读取分支 GitHub官方宣布从2020年10月1日起，将用“main”取代“master”作为默认分支名
+      label: main
+# 服务注册到eureka地址
+eureka:
+  client:
+    service-url:
+      defaultZone:  http://localhost:7001/eureka
+
