@@ -13,6 +13,12 @@ spring:
       uri: http://localhost:3344 # 配置中心地址
       #上述4个综合: main分支上:config-dev.yml的配置文件被读取http://config-3344.com:3344/main/config-dev.yml
       # config-3344 即localhost
+  # rabbitMQ相关配置
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
 eureka:
   client:
     service-url:

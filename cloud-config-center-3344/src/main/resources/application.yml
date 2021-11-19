@@ -17,9 +17,23 @@ spring:
         default-label: main # GitHub官方宣布从2020年10月1日起，将用“main”取代“master”作为默认分支名
       # 读取分支 GitHub官方宣布从2020年10月1日起，将用“main”取代“master”作为默认分支名
       label: main
+  # rabbitMQ相关配置
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
 # 服务注册到eureka地址
 eureka:
   client:
     service-url:
       defaultZone:  http://localhost:7001/eureka
 
+
+# rabbitMQ相关配置 暴露bus刷新配置的端点
+# 凡是 刷新 监控相关的 在pom中都要有actuator相关组件
+management:
+  endpoints:
+    web:
+      exposure:
+        include: 'bus-refresh'
