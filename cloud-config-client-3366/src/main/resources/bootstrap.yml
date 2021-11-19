@@ -5,9 +5,8 @@ spring:
   application:
     name: config-client
   cloud:
-
     config:
-      label: master
+      label: main # 这里开始一直指定master就错了
       name: config
       profile: dev
       uri: http://localhost:3344
