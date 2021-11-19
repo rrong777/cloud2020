@@ -1,0 +1,19 @@
+server:
+  port: 83
+
+
+spring:
+  application:
+    name: nacos-order-consumer
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+
+
+service-url:
+  nacos-user-service: http://nacos-payment-provider # 这块可配置可不配置，这里就是上面的spring.application.name 服务名
+
+
+
+
