@@ -8,7 +8,14 @@ server:
 spring:
   application:
     name: cloud-payment-service # 微服务中这个非常重要，一般你命名好了不要轻易改动，你使用eureka注册中心，在上面注册肯定要使用自己的名称。你要告诉服务注册中心你的id
-
+  # 配置sleuth和zipkin  SpringCloud收编了zipkin 改名叫做sleuth
+  zipkin:
+    # 监控的数据和图表要打到9411上让别人看到
+    base-url: http://localhost:9411
+  sleuth:
+    sampler:
+      # 采样率值介于0和1之间，1则表示全部采集
+      probability: 1
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
     driver-class-name: org.gjt.mm.mysql.Driver

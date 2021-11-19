@@ -37,6 +37,11 @@ public class PaymentController {
             return new CommonResult(444, "插入数据库失败", null);
         }
     }
+    @GetMapping("/zipkin")
+    public String paymentZipkin()
+    {
+        return "hi ,i'am paymentzipkin server fall back，welcome to atguigu，O(∩_∩)O哈哈~";
+    }
 
     @GetMapping("/get/{id}")
     public CommonResult<Payment> getPaymentById(@PathVariable("id") Long id){

@@ -46,6 +46,13 @@ public class OrderController {
         // 发起一个get请求
         return restTemplate.getForObject(PAYMENT_URL + "/payment/get/" + id, CommonResult.class);
     }
+    // ====================> zipkin+sleuth
+    @GetMapping("/payment/zipkin")
+    public String paymentZipkin()
+    {
+        String result = restTemplate.getForObject("http://localhost:8001"+"/payment/zipkin/", String.class);
+        return result;
+    }
     @GetMapping("/payment/getForEntity/{id}")
     public CommonResult<Payment> getPayment2(@PathVariable("id") Long id)  {
         // 进入getForObject参数一样。两个参数，一个是uri 一个是响应体的类型（响应给你的数据是什么类型 ）
